@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --Dark-Blue: hsl(209, 23%, 22%);      /*(Dark Mode Elements)*/
+  --Very-Dark-Blue: hsl(207, 26%, 17%); /*(Dark Mode Background)*/
+  --Very-Dark-Blue: hsl(200, 15%, 8%);  /*(Light Mode Text)*/
+  --Dark-Gray: hsl(0, 0%, 52%);         /*(Light Mode Input)*/
+  --Very-Light-Gray: hsl(0, 0%, 98%);   /*(Light Mode Background)*/
+  --White: hsl(0, 0%, 100%);            /*(Dark Mode Text & Light Mode Elements)*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Nunito Sans', sans-serif;
 }
