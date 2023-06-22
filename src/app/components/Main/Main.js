@@ -1,10 +1,12 @@
+import Search from './Search/Search'
+
 export default function Main() {
   return (
-    <main className="flex flex-col bg-[var(--Very-Light-Gray)] bg-red-100 h-full">
-      <div className="m-5">
-        {/* Search */}
-        {/* Filter */}
-        {/* Card */}
+    <main className="flex flex-col bg-[var(--Very-Light-Gray)] h-full p-5 items-center justify-start">
+      <div className="w-full max-w-md">        
+        <Search />
+        {/* <Filter /> */}
+        {/* <Card /> */}
       </div>
     </main>
   )

@@ -6,7 +6,8 @@
   /* other light theme styles */
 }
 
-.dark {
+.dark > header,
+.dark > main {
   background-color: #000000;
   color: #ffffff;
   /* other dark theme styles */

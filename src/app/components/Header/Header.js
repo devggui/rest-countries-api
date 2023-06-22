@@ -1,15 +1,6 @@
 import Image from "next/image";
-import { useState } from "react";
-import styles from '../Theme/Theme.module.css';
 
-export default function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  const toggleTheme = () => {
-    setIsDarkMode(prevMode => !prevMode)
-  }
-
-  const themeClassName = isDarkMode ? styles.dark : styles.light
+export default function Header({ toggleTheme }) {
 
   return (
     <header className={"flex flex-row justify-between items-center text-center border-b-2 border-solid shadow-md p-5"}>

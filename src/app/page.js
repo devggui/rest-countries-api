@@ -1,13 +1,25 @@
 'use client'
 
+import { useState } from "react"
+
 import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 
+import styles from './components/Theme/Theme.module.css';
+
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  const toggleTheme = () => {
+    setIsDarkMode(prevMode => !prevMode)
+  }
+  
+  const themeClassName = isDarkMode ? styles.dark : styles.light
+
   return (
-    <div className={theme + " h-screen"}>
+    <div className={themeClassName + " h-screen bg-green-50"}>
       <Header 
-        themeClassName={theme}
+        toggleTheme={toggleTheme}
       />
       <Main />
     </div>
