@@ -12,9 +12,7 @@ export default function Filter() {
     <Select 
       defaultValue={options[0]}
       options={options}
-      className="mt-5 w-3/5 outline-none rounded-md"
-      id="countries"
-      name="countries"
+      className="my-5 w-3/5 outline-none rounded-md"    
 
       styles={{
         control: (baseStyles, state) => ({
