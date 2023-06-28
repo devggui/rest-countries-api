@@ -1,19 +1,39 @@
 import Select from 'react-select'
 import AsyncSelect from 'react-select/async';
 
-export default function Filter() {
+export default function Filter({
+  regions
+}) {
+  const defaultValue = ['Filter by Region']
+  let allRegions = []
+
+  regions.map(region => {    
+    allRegions.push(region.region)  
+  })
+
+  const uniqueRegion = [...new Set(allRegions)]  
+
   const options = [
     { value: 'Filter by Region', label: 'Filter by Region' },
-    { value: '1', label: '1' },
-    { value: '2', label: '2' },
+
+    uniqueRegion.map(region => {
+      return (        
+        { 
+          value: region, 
+          label: region 
+        }
+      )
+    })
   ]
 
+  console.log(options)
   return (
     <Select 
-      defaultValue={options[0]}
-      options={options}
-      className="my-5 w-3/5 outline-none rounded-md"    
-
+      placeholder="Filter by Region"      
+      options={options[1]}
+      className="my-5 w-3/5 outline-none rounded-md" 
+      isClearable={true}
+      isSearchable={true}
       styles={{
         control: (baseStyles, state) => ({
           ...baseStyles, 

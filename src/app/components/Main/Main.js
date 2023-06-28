@@ -10,8 +10,7 @@ export default function Main() {
 
   useEffect(() => {
     axios('https://restcountries.com/v3.1/all').then(response => {
-      setCountries(response.data)
-      console.log(response.data)      
+      setCountries(response.data)      
     })
   }, [])
 
@@ -19,7 +18,9 @@ export default function Main() {
     <main className="flex flex-col bg-[var(--Very-Light-Gray)] p-5 items-center justify-start">
       <div className="w-full max-w-md">        
         <Search />
-        <Filter />
+        <Filter 
+          regions={countries}
+        />
         <div className="flex flex-col items-center justify-center">
           {countries.map((country, index) => {
             return (
